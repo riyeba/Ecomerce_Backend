@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "nsu_project/wsgi.py",
+      "src": "Ecomerce_project/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     },
@@ -19,7 +19,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "nsu_project/wsgi.py"
+      "dest": "Ecomerce_project/wsgi.py"
     }
   ]
 }
