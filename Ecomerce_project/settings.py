@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-jogx24*&+u33#ax!h244+ufe#$obf9ve+(*i+5(categ)zic^t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'Ecomerce_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':"django.db.backends.postgresql_psycopg2",
-        'NAME':"postgres",
+        'NAME':"ecomerce",
         'USER':"postgres",
         'PASSWORD':"3310",
         'HOST':"127.0.0.1",
