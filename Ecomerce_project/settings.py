@@ -99,7 +99,7 @@ DATABASES = {
         'NAME':"ecomerce",
         'USER':"postgres",
         'PASSWORD':"3310",
-        'HOST':"db.ptztdqabtrpdfonhvzjh.supabase.co",
+        'HOST':"127.0.0.1",
         'PORT':"5432",
     }
 }
