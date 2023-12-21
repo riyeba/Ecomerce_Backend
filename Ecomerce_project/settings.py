@@ -96,13 +96,14 @@ WSGI_APPLICATION = 'Ecomerce_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':"django.db.backends.postgresql_psycopg2",
-        'NAME':"ecomerce",
+        'NAME':"postgres",
         'USER':"postgres",
         'PASSWORD':"3310",
         'HOST':"127.0.0.1",
         'PORT':"5432",
     }
 }
+
 
 
 # Password validation
