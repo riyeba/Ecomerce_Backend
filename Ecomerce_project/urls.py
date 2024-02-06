@@ -21,16 +21,28 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-urlpatterns = [
+# urlpatterns = [
     
+#     path('admin/', admin.site.urls),
+#     # path('category/', (views.Category_list)),
+#     # path('category/<str:title>/', (views.Category_detail)),
+#     #  path('product/<str:category>/', (views.Category_detail)),
+#     path('product/', (views.Product_list)),
+#     # path('product/<slug>', (views.Product_detail)),
+#     # path('brand/', (views.Brand_list)),
+#     # path('brand/<str:title>/', (views.Brand_detail)),
+# ]
+
+urlpatterns = [
     path('admin/', admin.site.urls),
-    path('category/', (views.Category_list)),
-    path('category/<int:id>', (views.Category_detail)),
-    path('product/', (views.Product_list)),
-    path('product/<int:id>', (views.Product_detail)),
-    path('brand/', (views.Brand_list)),
-    path('brand/<int:id>', (views.Brand_detail)),
+    path('product/', views.Product_list.as_view(), name='product'),
+    path('category/', views.Category_list.as_view(), name='category'),
+    path('category/<int:pk>/', views.Category_detail.as_view()),
+    path('carts/', views.Cart_list.as_view()),
+    path('carts/<int:pk>/', views.Cart_detail.as_view()),
+    
 ]
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)

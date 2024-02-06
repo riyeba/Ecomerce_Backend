@@ -1,37 +1,32 @@
 from rest_framework import serializers
-from .models import Category,Product,Brand
+from .models import Category,Product,Brand,Cart
 
+
+class ProductSerializer(serializers.ModelSerializer):
+  
+  class Meta:
+    model=Product
+    fields=['id','title','new_slug','price','promo_price','stock','status','brand','image_URL','date_created','category','quantity']
 
 class CategorySerializer(serializers.ModelSerializer):
-  class Meta:
-    model=Category
-    fields=['id','title']
+    products = ProductSerializer(many=True, read_only=True)
+    class Meta:
+     model=Category
+     fields=['id','products','category_url','categoryname']
     
 
     
 class BrandSerializer(serializers.ModelSerializer):
+  product = ProductSerializer(many=True, read_only=True)
   class Meta:
     model=Brand
-    fields=['id','title']
+    fields=['id','title','product']
     
-class ProductSerializer(serializers.ModelSerializer):
+
+class CartSerializer(serializers.ModelSerializer):
   class Meta:
-    model=Product
-    fields=['id','title','price','promo_price','stock','status','category','brand','image_URL','detail','specification','key_features','date_created']
-  
+    model=Cart
+    fields=['id','title','new_slug','price','promo_price','stock','status','brand','image_URL','date_created','quantity'] 
     
-# class Product_DetailsSerializer(serializers.ModelSerializer):
-#   class Meta:
-#     model=Product_Details
-#     fields=['id','title','description']
-    
-# class SpecificationSerializer(serializers.ModelSerializer):
-#   class Meta:
-#     model=Specification
-#     fields=['id','description']
-    
-# class Key_FeaturesSerializer(serializers.ModelSerializer):
-#   class Meta:
-#     model=Key_Features
-#     fields=['id','title','description']
+
     

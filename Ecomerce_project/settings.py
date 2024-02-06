@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-jogx24*&+u33#ax!h244+ufe#$obf9ve+(*i+5(categ)zic^t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -44,12 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -59,8 +62,15 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
    'rest_framework.permissions.AllowAny',
-]
+],
+'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+    
 }
+
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'Ecomerce_project.urls'
 
@@ -96,13 +106,15 @@ WSGI_APPLICATION = 'Ecomerce_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':"django.db.backends.postgresql_psycopg2",
-        'NAME':"ecomerce",
-        'USER':"postgres",
-        'PASSWORD':"3310",
-        'HOST':"127.0.0.1",
+        'NAME':"postgres",
+        'USER':"postgres.kwenqspidhgsrnigupji",
+        'PASSWORD':"E90fm2GMmlDnZIze",
+        'HOST':"aws-0-eu-central-1.pooler.supabase.com",
         'PORT':"5432",
     }
 }
+
+
 
 
 
