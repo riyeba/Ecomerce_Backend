@@ -105,7 +105,7 @@ WSGI_APPLICATION = 'Ecomerce_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':"django.db.backends.postgresql_psycopg2-binary",
+        'ENGINE':"django.db.backends.postgresql_psycopg2",
         'NAME':"postgres",
         'USER':"postgres.kwenqspidhgsrnigupji",
         'PASSWORD':"E90fm2GMmlDnZIze",
