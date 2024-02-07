@@ -105,12 +105,12 @@ WSGI_APPLICATION = 'Ecomerce_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':"django.db.backends.postgresql_psycopg2",
+        'ENGINE':"django.db.backends.postgresql",
         'NAME':"postgres",
         'USER':"postgres.kwenqspidhgsrnigupji",
         'PASSWORD':"E90fm2GMmlDnZIze",
         'HOST':"aws-0-eu-central-1.pooler.supabase.com",
-        'PORT':"5432",
+        'PORT':"6543",
     }
 }
 
